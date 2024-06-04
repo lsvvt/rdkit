@@ -116,7 +116,8 @@ LazyCartesianProduct<unsigned int> getValenceCombinations(
       ss << "Valence of atom " << i << " is " << atom->getDegree()
          << ", which is larger than the allowed maximum, "
          << valences[valences.size() - 1];
-      throw ValueErrorException(ss.str());
+      possible[i] = atom->getDegree();
+     // throw ValueErrorException(ss.str());
     }
   }
 
